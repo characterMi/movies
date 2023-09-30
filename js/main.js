@@ -42,9 +42,7 @@ const observer = new IntersectionObserver((entries) => {
         console.log(entry);
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        }/*else {
-            entry.target.classList.remove('show');
-        }*/
+        }
     })
 });
 const hidden = document.querySelectorAll('.hidden');
@@ -75,9 +73,7 @@ const Observer = new IntersectionObserver((Entries) => {
         console.log(Entry);
         if (Entry.isIntersecting) {
             Entry.target.classList.add('show2');
-        }/*else {
-            entry.target.classList.remove('show');
-        }*/
+        }
     })
 });
 const hidden2 = document.querySelectorAll('.hidden2');

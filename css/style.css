@@ -30,7 +30,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
-    z-index: 100000;
+    z-index: 10000012323111;
     padding: 0 2.5%;
 }
 
@@ -119,15 +119,22 @@ header a h3:nth-child(2) {
 
 
 .search {
-    position: relative;
+    display: flex;
     width: 95%;
+    flex-direction: column;
+    margin: auto;
     margin-top: 5rem;
-    left: 50%;
-    transform: translate(-50%);
+    position: relative;
+}
+
+.search-input {
+    position: relative;
+    width: 100%;
     height: 45px;
     opacity: .9;
     display: flex;
     color: gray;
+    z-index: 1111111111;
 }
 
 hr {
@@ -159,6 +166,81 @@ hr {
     cursor: pointer;
 }
 
+.searched-movies {
+    width: calc(100% - 30px);
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    z-index: 111111111;
+    backdrop-filter: blur(10px);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    padding: 45px 10px;
+    border-radius: 0 0 30px 30px;
+    border-left: 5px solid #000;
+    border-right: 5px solid #000;
+    border-bottom: 5px solid #000;
+}
+
+
+.searched-movies hr {
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+}
+
+.filtered-movie {
+    display: flex;
+    justify-content: start;
+    color: #fff;
+    height: 250px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: auto;
+}
+
+.name-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.name-container a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 32px;
+}
+
+.name-container h4 {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+}
+
+.about-container p {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.filtered-movie img {
+    width: 30%;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+}
+
+
+.nothing-found {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
 
 /*****************first slider*******************/
 
@@ -169,7 +251,7 @@ hr {
 }
 
 
-.item {
+.first-slider .item {
     width: 100%;
     height: 420px;
     border-radius: 12px;
@@ -269,6 +351,8 @@ hr {
     width: 100%;
     background: red;
     height: 380px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .second-slider .item img {
@@ -758,7 +842,7 @@ footer section a:hover {
 
     /* Search */
 
-    .search {
+    .search-input {
         font-size: 1rem;
         height: 40px;
     }
@@ -768,15 +852,12 @@ footer section a:hover {
         padding: 0 1.8rem;
     }
 
-    .search ul {
-        width: 50%
-    }
-
     /* reflected */
 
     .reflected>* {
         font-size: 2rem;
     }
+
     .movies article {
         width: 100%;
         border-radius: 20px;
@@ -833,9 +914,18 @@ footer section a:hover {
 
 
 @media screen and (max-width: 600px) {
+    .first-slider .item {
+        height: 350px;
+    }
+
+    .second-slider .item {
+        height: 280px;
+    }
+    
     .bar-container {
         margin-right: 10px;
     }
+
     .movies article {
         margin-bottom: 60px;
     }
@@ -895,17 +985,37 @@ footer section a:hover {
 }
 
 
-@media screen and (max-width: 450px) and (min-width: 350px) {
+@media screen and (max-width: 450px) {
+    
     .search input {
         margin-left: -.2rem;
+    }
+
+    .filtered-movie {
+        height: 200px;
+    }
+
+    .about-container {
+        padding: 0 10px;
+    }
+
+    .name-container a {
+        font-size: 22px;
+    }
+
+    .about-container p {
+        font-size: 14px;
+    }
+
+    .nothing-found {
+        font-size: 35px;
     }
 
     .reflected>* {
         font-size: 1.5rem;
     }
-    
-    .item {
-        height: 300px
+    .first-slider .item {
+        height: 260px;
     }
 
     .owl-prev,
@@ -921,11 +1031,11 @@ footer section a:hover {
     }
 
     .second-slider {
-        height: 240px
+        height: 220px
     }
 
     .second-slider .item {
-        height: 260px
+        height: 220px
     }
 
     .second-slider .item a {
@@ -1004,7 +1114,24 @@ footer section a:hover {
 }
 
 @media screen and (max-width: 350px) {
-    .item {
+    
+    .filtered-movie {
+        height: 160px;
+    }
+
+    .name-container a {
+        font-size: 18px;
+    }
+
+    .about-container p {
+        font-size: 12px;
+    }
+
+    .nothing-found {
+        font-size: 26px;
+    }
+
+    .first-slider .item {
         height: 220px
     }
 
@@ -1024,12 +1151,8 @@ footer section a:hover {
         margin-bottom: 15px;
     }
 
-    .second-slider {
-        height: 240px
-    }
-
     .second-slider .item {
-        height: 220px
+        height: 180px
     }
 
     .second-slider .item a {
@@ -1121,6 +1244,7 @@ footer section a:hover {
         border-radius: 1px;
 
     }
+
     select option {
         font-size: 14px;
     }
@@ -1129,9 +1253,11 @@ footer section a:hover {
         font-size: 1rem;
         margin-right: 10px;
     }
+
     .menu-container {
         top: 3.2rem;
     }
+
     .score h1 {
         font-size: 12px;
     }

@@ -1,4 +1,3 @@
-<!-- partial:index.partial.html -->
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -47,8 +46,11 @@
         </label>
     </header>
     <section class="search">
-        <i class="fas fa-search"></i>
-        <input type="search" placeholder="search...">
+        <section class="search-input">
+            <i class="fas fa-search search-icon"></i>
+            <input id="search-series" type="search" placeholder="search...">
+        </section>
+        <ul class="searched-movies"></ul>
     </section>
     <section class="first-slider">
         <div id="slider1" class="owl-carousel owl-theme">
@@ -296,6 +298,7 @@ Bryan Cranston , Aaron Paul , Anna Gunn</h2>
     </footer>
 <script src="../../js/jquery-3.5.1.min.js"></script>
 <script src="../../js/owl.carousel.min.js"></script>
+<script src="../../js/series.js"></script>
 <script src="../../js/main.js"></script>
 </body>
 </html>

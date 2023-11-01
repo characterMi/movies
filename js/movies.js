@@ -85,4 +85,4 @@ const searchMovie = (searchField, movies) => {
 
 }
 
-search_movies.onchange = (e) => searchMovie(e.target.value, movies)
+search_movies.onkeyup = (e) => searchMovie(e.target.value, movies)

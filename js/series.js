@@ -118,4 +118,4 @@ const searchForSeries = (searchField, movies) => {
 
 }
 
-search_series.onchange = (e) => searchForSeries(e.target.value, series)
+search_series.onkeyup = (e) => searchForSeries(e.target.value, series)

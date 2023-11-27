@@ -25,6 +25,9 @@
 <img style="margin-bottom: 40px" src="./preview_images/movies_fifth.png" alt="image" />
 
 
+<img style="margin-bottom: 40px" src="./preview_images/movies_sixth.png" alt="image" />
+
+
 # Mobile Responsive
 
 <img src="./preview_images/movies_responsive.png" alt="image" />
